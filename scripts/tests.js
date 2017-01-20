@@ -1,8 +1,6 @@
 function pow(x, n) {
+	var checkDegree = n > 0 && Number.isInteger(n);
 	
-	//var result = 1;
-	var	checkDegree = n > 0 && Number.isInteger(n);
-
 	function raiseNumber(){
 		var result = 1
   		for (var i = 0; i < n; i++) {
@@ -10,6 +8,6 @@ function pow(x, n) {
   		}
   		return result;
   	}
-
+	
   	return (checkDegree) ? raiseNumber() : NaN;
 }
