@@ -1,12 +1,10 @@
 function pow(x, n) {
 	var result = NaN;
-	if (n > 0 && !(n % 1)){
+	if (n > 0 && !(n % 1) || x !==0 && !n){
 		result = 1;
 		for (var i = 0; i < n; i++) {
 			result *= x;
 		}
-	} else if (x !==0 && !n) {
-		result = 1;
 	}
 	return result;
 }
