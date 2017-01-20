@@ -1,5 +1,5 @@
 /*
-мой вариант содержания test.js с использованием цикла 
+мой вариант содержания test.js для задания 3 с использованием цикла 
 */
 
 describe("pow", function() {
@@ -9,7 +9,7 @@ describe("pow", function() {
 			var result = (x === 1) ? 5 : (x === 2) ? 25 : (x === 3) ? 125 :
 			false;
 			it("5 в степени " + x + " равно " + result, function() {
-	    		assert.equal(pow(5, x), result);
+	    			assert.equal(pow(5, x), result);
 	  		});
 		}
 
