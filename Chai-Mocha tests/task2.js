@@ -1,6 +1,12 @@
+/*
+Как видно, по сравнению с заданием 1 практические ничего не поменялось.
+Я лишь несколько изменил условие if и переменную checkDegree соответственно для того,
+чтобы новые тесты отрабатывали так, как надо.
+*/
+
 function pow(x, n) {
 	var result = NaN;
-	if (n > 0 && !(n % 1) || x !==0 && !n){
+	if (n > 0 && !(n % 1) || !!x && !n) { // здесь добавилось новое условие !!x && !n (x !== 0 && n === 0)
 		result = 1;
 		for (var i = 0; i < n; i++) {
 			result *= x;
@@ -12,16 +18,19 @@ function pow(x, n) {
 // исправить!
 
 function pow(x, n) {
-	var checkDegree = n > 0 && !(n % 1);
+	var checkDegree = n > 0 && !(n % 1) || !!x && !n; // и здесь тоже
 	function raiseNumber(){
-		var result = 1
-  		for (var i = 0; i < n; i++) {
-    		result *= x;
-  		}
+		var result = 1, i = 0;
+		while (i < n) {result *= x; i++}
   		return result;
   	}
   	return (checkDegree) ? raiseNumber() : NaN;
 }
+
+/*
+здесь практически все, как представлено в официальном решении.
+единственно, я разбил it'ы по логическим описаниям. 
+*/
 
 describe("pow", function() {
 
